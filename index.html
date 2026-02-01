@@ -1,451 +1,102 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>Sandra Lanches | Oficial</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Sandra Lanches | Oficial</title>
 
-    <style>
-      :root {
-        --brand-color: #ff4d00;
-        --dark-pure: #0a0a0a;
-        --item-bg: #161616;
-      }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-      body {
-        background-color: var(--dark-pure);
-        background-image:
-          radial-gradient(
-            circle at 50% -20%,
-            rgba(255, 77, 0, 0.15) 0%,
-            transparent 50%
-          ),
-          radial-gradient(#1a1a1a 1px, transparent 1px);
-        background-size:
-          100% 100%,
-          20px 20px;
-        background-attachment: fixed;
-        color: #fff;
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
+<body>
+  <div class="share-top" onclick="copyLink()" title="Compartilhar">
+    <i class="fas fa-share-alt"></i>
+  </div>
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(15px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+  <div class="container-main text-center animate-entry">
+    <header>
+      <img src="assets/img/logo.png" class="logo-img" alt="Sandra Lanches" />
+      <h2 class="brand-name h4">Sandra Lanches</h2>
+      <div class="folga-badge">Folga às terças</div>
 
-      @keyframes pulseLight {
-        0% {
-          box-shadow: 0 0 0 0 rgba(255, 77, 0, 0.4);
-        }
-        70% {
-          box-shadow: 0 0 0 10px rgba(255, 77, 0, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(255, 77, 0, 0);
-        }
-      }
+      <div class="social-mini-row">
+        <a href="https://wa.me/message/3SB6H7LSPEHNH1" target="_blank" class="link-wa"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.tiktok.com/@sandra_laanches" target="_blank" class="link-tk"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.kwai.com/@czzgw117" target="_blank" class="link-kw icon-kwai-mini">
+          <img src="assets/img/kwai.png" alt="Kwai" />
+        </a>
+        <a href="https://www.instagram.com/sandra_laanches/" target="_blank" class="link-ig"><i class="fab fa-instagram"></i></a>
+      </div>
 
-      .animate-entry {
-        animation: fadeInUp 0.8s ease-out forwards;
-      }
+      <div class="divider-profissional"></div>
+    </header>
 
-      .container-main {
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 40px 20px;
-      }
-
-      .logo-img {
-        width: 105px;
-        height: 105px;
-        border-radius: 50%;
-        border: 3px solid var(--brand-color);
-        box-shadow: 0 0 20px rgba(255, 77, 0, 0.2);
-        margin-bottom: 8px;
-        object-fit: cover;
-      }
-
-      .brand-name {
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: -0.5px;
-        margin-bottom: 2px;
-      }
-
-      .folga-badge {
-        display: inline-block;
-        color: var(--brand-color);
-        font-size: 0.65rem;
-        font-weight: 800;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 10px;
-      }
-
-      .social-mini-row {
-        display: flex;
-        justify-content: center;
-        gap: 18px;
-        margin-bottom: 18px;
-      }
-      .social-mini-row a {
-        color: #fff;
-        font-size: 1.3rem;
-        opacity: 0.7;
-        transition: 0.3s;
-        text-decoration: none;
-      }
-      .social-mini-row a {
-        color: #fff;
-        font-size: 1.3rem;
-        opacity: 0.7;
-        transition: 0.3s;
-        text-decoration: none;
-        position: relative;
-      }
-
-      .social-mini-row a::after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -4px;
-        height: 3px;
-        background: var(--brand-color);
-        border-radius: 2px;
-        transform: scaleX(0);
-        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .social-mini-row a:hover::after {
-        transform: scaleX(1);
-      }
-      .social-mini-row a:hover {
-        opacity: 1;
-        transform: translateY(-3px);
-      }
-
-      .link-wa:hover {
-        color: #25d366 !important;
-      }
-      .link-tk:hover {
-        color: #00f2ea !important;
-      }
-      .link-ig:hover {
-        color: #e1306c !important;
-      }
-      .link-kw:hover img {
-        filter: none !important;
-      }
-
-      .icon-kwai-mini img {
-        height: 1.1em;
-        width: 1.1em;
-        filter: brightness(0) invert(1);
-        transition: 0.3s;
-      }
-
-      .nav-list .link-item {
-        background: var(--item-bg);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 18px;
-        padding: 16px 20px;
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: #fff;
-        font-weight: 700;
-        transition: 0.2s;
-      }
-
-      .icon-box {
-        width: 32px;
-        font-size: 1.1rem;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .text-center-custom {
-        flex: 1;
-        text-align: center;
-        font-size: 0.85rem;
-        letter-spacing: 0.3px;
-      }
-
-      .link-featured {
-        background: var(--brand-color) !important;
-        border: none;
-        animation: pulseLight 2s infinite;
-      }
-
-      .link-item:hover {
-        background: #1f1f1f;
-        transform: scale(1.02);
-      }
-      .link-item:active {
-        transform: scale(0.96);
-      }
-
-      footer {
-        margin-top: 50px;
-        text-align: center;
-        font-size: 0.6rem;
-        opacity: 0.4;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .share-top {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: #fff;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="share-top" onclick="copyLink()">
-      <i class="fas fa-share-alt"></i>
-    </div>
-
-    <div class="container-main text-center animate-entry">
-      <header>
-        <img src="assets/img/logo.png" class="logo-img" alt="Sandra Lanches" />
-        <h2 class="brand-name h4">Sandra Lanches</h2>
-        <div class="folga-badge">Folga às terças</div>
-
-        <div class="social-mini-row">
-          <a
-            href="https://wa.me/message/3SB6H7LSPEHNH1"
-            target="_blank"
-            class="link-wa"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
-          <a
-            href="https://www.tiktok.com/@sandra_laanches"
-            target="_blank"
-            class="link-tk"
-            ><i class="fab fa-tiktok"></i
-          ></a>
-          <a
-            href="https://www.kwai.com/@czzgw117"
-            target="_blank"
-            class="link-kw icon-kwai-mini"
-            ><img src="assets/img/kwai.png" alt="Kwai"
-          /></a>
-          <a
-            href="https://www.instagram.com/sandra_laanches/"
-            target="_blank"
-            class="link-ig"
-            ><i class="fab fa-instagram"></i
-          ></a>
+    <nav class="nav-list">
+      <a href="https://instadelivery.com.br/sandralanchesma" class="link-item link-featured" target="_blank">
+        <div class="icon-box">
+          <img src="assets/img/entregador.png" alt="Delivery" class="icon-delivery-img" />
         </div>
-
-        <div class="divider-profissional"></div>
-        <style>
-          .divider-profissional {
-            width: 80%;
-            height: 1px;
-            margin: 24px auto 24px auto;
-            background: linear-gradient(
-              90deg,
-              rgba(255, 255, 255, 0) 0%,
-              rgba(255, 77, 0, 0.25) 20%,
-              var(--brand-color) 50%,
-              rgba(255, 77, 0, 0.25) 80%,
-              rgba(255, 255, 255, 0) 100%
-            );
-            box-shadow:
-              0 2px 12px 0 rgba(255, 77, 0, 0.08),
-              0 1.5px 0.5px 0 rgba(0, 0, 0, 0.1);
-            border-radius: 2px;
-            opacity: 0.85;
-          }
-        </style>
-      </header>
-
-      <nav class="nav-list">
-        <a
-          href="https://instadelivery.com.br/sandralanchesma"
-          class="link-item link-featured"
-          target="_blank"
-        >
-          <div class="icon-box">
-            <img
-              src="assets/img/entregador.png"
-              alt="Delivery"
-              style="
-                height: 1.8em;
-                width: 1.8em;
-                filter: brightness(0) invert(1);
-              "
-            />
-          </div>
-          <div class="text-center-custom">
-            <span class="text-uppercase d-block" style="line-height: 1.2"
-              >Fazer Pedido Agora</span
-            >
-            <small style="font-size: 0.6rem; opacity: 0.8; font-weight: 500"
-              >DELIVERY & RETIRADA</small
-            >
-          </div>
-          <div class="icon-box justify-content-end opacity-20">
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </a>
-
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=Sandra+Lanches"
-          class="link-item"
-          target="_blank"
-        >
-          <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
-          <span class="text-center-custom text-uppercase"
-            >Nossa Localização</span
-          >
-          <div class="icon-box justify-content-end opacity-20">
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </a>
-
-        <a
-          href="https://www.kwai.com/@czzgw117"
-          class="link-item"
-          target="_blank"
-        >
-          <div class="icon-box icon-kwai-mini">
-            <img src="assets/img/kwai.png" alt="Kwai" />
-          </div>
-          <span class="text-center-custom text-uppercase">Assista no Kwai</span>
-          <div class="icon-box justify-content-end opacity-20">
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </a>
-
-        <a
-          href="https://www.tiktok.com/@sandra_laanches"
-          class="link-item"
-          target="_blank"
-        >
-          <div class="icon-box"><i class="fab fa-tiktok"></i></div>
-          <span class="text-center-custom text-uppercase"
-            >Acompanhe no TikTok</span
-          >
-          <div class="icon-box justify-content-end opacity-20">
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </a>
-
-        <a
-          href="https://wa.me/message/3SB6H7LSPEHNH1"
-          class="link-item"
-          target="_blank"
-        >
-          <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
-          <span class="text-center-custom text-uppercase"
-            >Falar com Atendente</span
-          >
-          <div class="icon-box justify-content-end opacity-20">
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </a>
-      </nav>
-
-      <footer>
-        <div class="footer-main">
-          <span>&copy; 2026 Sandra Lanches</span>
-          <span class="footer-sep">|</span>
-          <span>
-            Desenvolvido por
-            <a
-              href="https://wa.me/98984021537?text=Ol%C3%A1!%20Quero%20um%20Bio%20Link%20personalizado%20com%20a%20minha%20marca%20e%20identidade%20visual%20no%20WhatsApp%20igual%20ao%20Sandra%20Lanches!%20Pode%20me%20ajudar%3F"
-              target="_blank"
-              class="menubairro-highlight"
-              style="text-decoration: underline dotted"
-              >MENUBAIRRO</a
-            >
-          </span>
+        <div class="text-center-custom">
+          <span class="text-uppercase d-block fw-bold">Fazer Pedido Agora</span>
+          <small class="subtitle-link">DELIVERY & RETIRADA</small>
         </div>
-      </footer>
-      <style>
-        .footer-main {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: 8px;
-          font-size: 0.75em;
-          color: #fff;
-          opacity: 0.6;
-          margin-bottom: 0.2em;
-        }
-        .footer-sep {
-          color: var(--brand-color);
-          font-weight: bold;
-          opacity: 0.7;
-        }
-        .menubairro-highlight {
-          color: var(--brand-color);
-          font-weight: bold;
-          letter-spacing: 1px;
-        }
-      </style>
-    </div>
+        <div class="icon-box justify-content-end opacity-20">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
 
-    <script>
-      async function copyLink() {
-        const mensagem = `Confira todos os links oficiais do Sandra Lanches em um só lugar: ${window.location.href}`;
-        try {
-          if (navigator.share) {
-            await navigator.share({
-              title: "Sandra Lanches | Links Oficiais",
-              text: mensagem
-            });
-          } else {
-            await navigator.clipboard.writeText(mensagem);
-            alert("Mensagem copiada! Agora é só colar onde quiser compartilhar.");
-          }
-        } catch (err) {
-          console.log(err);
-        }
-      }
-    </script>
-  </body>
+      <a href="https://maps.google.com/?q=Sandra+Lanches" class="link-item" target="_blank">
+        <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+        <span class="text-center-custom text-uppercase">Nossa Localização</span>
+        <div class="icon-box justify-content-end opacity-20">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+
+      <a href="https://www.kwai.com/@czzgw117" class="link-item" target="_blank">
+        <div class="icon-box icon-kwai-mini">
+          <img src="assets/img/kwai.png" alt="Kwai" />
+        </div>
+        <span class="text-center-custom text-uppercase">Assista no Kwai</span>
+        <div class="icon-box justify-content-end opacity-20">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+
+      <a href="https://www.tiktok.com/@sandra_laanches" class="link-item" target="_blank">
+        <div class="icon-box"><i class="fab fa-tiktok"></i></div>
+        <span class="text-center-custom text-uppercase">Acompanhe no TikTok</span>
+        <div class="icon-box justify-content-end opacity-20">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+
+      <a href="https://wa.me/message/3SB6H7LSPEHNH1" class="link-item" target="_blank">
+        <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+        <span class="text-center-custom text-uppercase">Falar com Atendente</span>
+        <div class="icon-box justify-content-end opacity-20">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+    </nav>
+
+    <footer>
+      <div class="footer-main">
+        <span>© 2026 Sandra Lanches</span>
+        <span class="footer-sep">|</span>
+        <span>
+          Desenvolvido por 
+          <a href="https://wa.me/98984021537" target="_blank" class="menubairro-highlight">MENUBAIRRO</a>
+        </span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
