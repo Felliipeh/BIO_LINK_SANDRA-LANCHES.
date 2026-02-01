@@ -431,15 +431,19 @@
 
     <script>
       async function copyLink() {
+        const mensagem = `Venha conferir nossos links oficiais do Sandra Lanches! Aqui você encontra todas as informações, cardápio, localização e canais de contato de forma fácil e rápida. Acesse agora: ${window.location.href}`;
         try {
           if (navigator.share) {
             await navigator.share({
-              title: "Sandra Lanches",
+              title: "Sandra Lanches | Links Oficiais",
+              text: mensagem,
               url: window.location.href,
             });
           } else {
-            await navigator.clipboard.writeText(window.location.href);
-            alert("Link copiado!");
+            await navigator.clipboard.writeText(mensagem);
+            alert(
+              "Mensagem formatada copiada! Agora é só colar onde quiser compartilhar.",
+            );
           }
         } catch (err) {
           console.log(err);
