@@ -1,27 +1,15 @@
-@media (max-width: 370px) {
-    body {
-        background-attachment: scroll !important;
-    }
 
-    .container-main {
-        padding: 18px 4vw !important;
-    }
-}
+
 
 :root {
-
-    html,
-    body {
-        min-height: 100vh;
-    }
-
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     --brand-color: #ff4d00;
     --dark-pure: #0a0a0a;
     --item-bg: #161616;
+}
+
+html,
+body {
+    min-height: 100vh;
 }
 
 body {
@@ -71,6 +59,10 @@ body {
     max-width: 400px;
     margin: 0 auto;
     padding: 40px 20px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .logo-img {
@@ -232,4 +224,19 @@ body {
 .menubairro-highlight {
     color: var(--brand-color);
     font-weight: bold;
+}
+@media (max-width: 370px) {
+    .nav-list .link-item {
+        margin-left: 5vw !important;
+        margin-right: 5vw !important;
+        width: auto !important;
+    }
+
+    body {
+        background-attachment: scroll !important;
+    }
+
+    .container-main {
+        padding: 18px 4vw !important;
+    }
 }
